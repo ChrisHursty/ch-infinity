@@ -31,7 +31,7 @@ echo '</div></div></div></section>';
                     <?php esc_html_e( 'It looks like nothing was found at this location', 'ch-infinity' ); ?>
                 </h2>
                 <div class="button-box">
-                    <a href="/" class="spark-btn"><span>Return Home</span></a>
+                    <a href="/" class="infinity-btn"><span>Return Home</span></a>
                 </div>
                 <div class="search-container">
                     <?php get_search_form(); ?>

@@ -8,7 +8,7 @@
 }
 
 .header-spacer {
-    margin-top: 70px;
+    margin-top: 85px;
 
 }
   
@@ -116,15 +116,18 @@
             transition: background-color 0.5s ease;
 
             &:hover {
-                background-color: $white;
+                background-color: $light-primary;
 
                 a {
                     color: $primary;
+                    text-decoration: none;
                 }
             }
 
             a {
+                color: $primary;
                 display: block;
+                font-weight: 700;
                 height: 100%;
                 width: 100%;
                 transition: color 0.5s ease;
@@ -170,14 +173,14 @@
                 position: relative;
 
                 a {
-                    color: $white;
+                    color: $secondary;
                     font-weight: 500;
                     text-decoration: none;
                     text-transform: uppercase;
                     transition: color 0.5s ease;
 
                     &:hover {
-                        color: $dark-primary;
+                        color: $light-primary;
                         text-decoration: underline;
                     }
 
@@ -226,6 +229,11 @@
                         border-top: transparent;
                     }
                 }
+            }
+
+            .current-menu-item a {
+                color: $light-primary;
+                text-decoration: underline;
             }
 
             @media (max-width: 768px) {

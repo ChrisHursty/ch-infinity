@@ -71,9 +71,7 @@ figure {
 }
 
 .iso-bg {
-    background: linear-gradient(to right, $white, $dark-gray);
-    background-repeat: repeat; // Ensures the image tiles
-    background-position: top left;
+    background: $primary;
     color: $dark-primary;
     position: relative;
     z-index: 1;
@@ -91,8 +89,8 @@ figure {
 }
 
 // Buttons
-.spark-btn {
-    background-color: $secondary;
+.infinity-btn {
+    background-color: $light-primary;
     border-radius: 50px;
     display: inline-block;
     font-family: $heading;
@@ -105,7 +103,7 @@ figure {
     transition: background-color 0.5s ease;
 
     span {
-        color: $white;
+        color: $primary;
         display: block;
         height: 100%;
         width: 100%;
@@ -113,11 +111,11 @@ figure {
     }
 
     &:hover {
-        background-color: $primary;
+        background-color: $secondary;
         color: $white;
 
         span, a {
-            color: $white;
+            color: $primary;
         }
     }
 }
@@ -128,7 +126,7 @@ figure {
 }
 
 // Buttons
-.site-header .spark-btn {
+.site-header .infinity-btn {
 
     &:hover {
         background-color: $dark-gray;
@@ -140,7 +138,7 @@ figure {
     }
 }
 
-.site-header .main-navigation ul li.spark-btn a:hover {
+.site-header .main-navigation ul li.infinity-btn a:hover {
     color: $white;
     text-decoration: none;
 }

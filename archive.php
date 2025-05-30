@@ -31,7 +31,7 @@ get_header();
                     <?php endif; ?>
                         <div class="content">
                             <h3><?php the_title(); ?></h3>
-                            <a href="<?php the_permalink(); ?>" class="spark-btn"><span>Read More</span></a>
+                            <a href="<?php the_permalink(); ?>" class="infinity-btn"><span>Read More</span></a>
                         </div>
                     </a>
                 </div>
