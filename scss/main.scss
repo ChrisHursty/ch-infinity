@@ -1,0 +1,43 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+// Variables
+$black: #313131;
+$white: #ffffff;
+$primary: var(--primary-color);
+$secondary: var(--secondary-color);
+$dark-sec: #C45303; // ADA Orange
+$dark-gray: #363636;
+$dark-grey: #363636;
+$light-gray: #f4f4f4;
+$light-grey: #f4f4f4;
+$light-primary: var(--light-primary-color);
+$dark-primary: var(--dark-primary-color);
+
+$footer-top-color: $primary;
+$footer-bottom-color: #000;
+
+// Fonts
+$heading: 'Newsreader', serif;
+$sub-heading: 'Newsreader', serif;
+$body: 'Epilogue', sans-serif;
+
+// Base Styles
+@import 'base/reset';
+@import 'base/common';
+@import 'base/grid';
+@import 'base/helpers';
+@import 'base/responsive-fonts';
+
+@import 'base/header';
+@import 'base/footer';
+@import 'base/cta';
+@import 'base/testimonials-slider';
+@import 'base/home-page';
+@import 'base/portfolio-grid.scss';
+@import 'base/hero-title';
+@import 'base/single-portfolio.scss';
+@import 'base/company-ticker.scss';
+@import 'base/archive.scss';
+@import 'base/sidebar.scss';
+@import 'base/custom-templates.scss';

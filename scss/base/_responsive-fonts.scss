@@ -1,0 +1,106 @@
+html {
+	font-size: 16px;
+}
+
+/* Define variables for minimum, preferred, and maximum font sizes */
+$smallFontSize: 16px;
+$minFontSize: 20px;
+$preferredFontSize: 40px;
+$maxFontSize: 48px;
+
+/* Apply responsive font size using clamp() */
+h1 {
+	font-family: $heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize}, #{$maxFontSize});
+	line-height: 1.1;
+}
+
+h2 {
+	font-family: $sub-heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 3px}, #{$maxFontSize - 3px});
+	font-weight: 300;
+	line-height: 1.1;
+    margin: 20px 0 10px;
+}
+
+h3 {
+	font-family: $sub-heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 16px}, #{$maxFontSize - 16px});
+	font-weight: 900;
+	line-height: 1.4;
+    text-transform: capitalize;
+    margin: 20px 0 10px;
+}
+
+h4 {
+	font-family: $heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 22px}, #{$maxFontSize - 22px});
+	line-height: 1.5;
+	/* Set your desired line height */
+}
+
+h5 {
+	font-family: $heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 16px}, #{$maxFontSize - 16px});
+	line-height: 1.6;
+	/* Set your desired line height */
+}
+
+h6 {
+	font-family: $heading;
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 20px}, #{$maxFontSize - 20px});
+	line-height: 1.7;
+	/* Set your desired line height */
+}
+
+p {
+	font-size: clamp(14px, 16px, 16px);
+	line-height: 1.8;
+	margin-bottom: 16px;
+}
+
+strong {
+	font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+	/* Adjust font sizes and line heights for smaller screens if needed */
+
+	h1 {
+		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 4px}, #{$maxFontSize - 4px});
+	}
+
+	h2 {
+		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 16px}, #{$maxFontSize - 16px});
+		line-height: 1.2;
+	}
+
+	h3 {
+		font-size: clamp(#{$smallFontSize}, #{$preferredFontSize - 24px}, #{$maxFontSize - 24px});
+		line-height: 1.5;
+		/* Set your desired line height for H3 */
+	}
+
+	h4 {
+		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 16px}, #{$maxFontSize - 16px});
+		line-height: 1.6;
+		/* Set your desired line height for H4 */
+	}
+
+	h5 {
+		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 20px}, #{$maxFontSize - 20px});
+		line-height: 1.7;
+		/* Set your desired line height for H5 */
+	}
+
+	h6 {
+		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 24px}, #{$maxFontSize - 24px});
+		line-height: 1.8;
+		/* Set your desired line height for H6 */
+	}
+
+	p {
+		font-size: clamp(14px, 15px, 15px);
+		line-height: 1.6;
+	}
+}

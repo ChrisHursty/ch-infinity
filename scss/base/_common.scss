@@ -1,0 +1,198 @@
+// Common SCSS
+
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body {
+    background-color: $white;
+    font-family: $body;
+}
+
+body.admin-bar {
+    margin-top: 32px !important;
+}
+
+a {
+    color: $primary;
+    text-decoration: underline;
+    transition: color 0.5s ease;
+
+    &:hover {
+        color: $secondary;
+        text-decoration: none;
+    }
+}
+
+// Unorder lists
+ul {
+    list-style-type: disc; // Style the items with circles
+    margin: 15px 0;
+
+    ::marker {
+        color: $secondary;
+    }
+    
+    // Use a mixin for responsive indenting if you frequently use similar patterns
+    @mixin responsive-indent($desktop-indent, $mobile-indent: null) {
+        margin-left: $desktop-indent;
+
+        @media (max-width: 767px) {
+            margin-left: $mobile-indent;
+        }
+    }
+
+    li {
+        @include responsive-indent(30px, 15px); // Apply responsive indentation
+    }
+}
+
+figcaption {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+figure {
+    max-width: 100% !important;
+}
+
+.dark-bg {
+    background: linear-gradient(to right, $light-primary, $dark-primary);
+    color: $white;
+}
+
+.iso-bg {
+    background: linear-gradient(to right, $white, $dark-gray);
+    background-repeat: repeat; // Ensures the image tiles
+    background-position: top left;
+    color: $dark-primary;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .75;
+        z-index: -1;
+    }
+}
+
+// Buttons
+.spark-btn {
+    background-color: $secondary;
+    border-radius: 50px;
+    display: inline-block;
+    font-family: $heading;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+
+    span {
+        color: $white;
+        display: block;
+        height: 100%;
+        width: 100%;
+        transition: color 0.5s ease;
+    }
+
+    &:hover {
+        background-color: $primary;
+        color: $white;
+
+        span, a {
+            color: $white;
+        }
+    }
+}
+
+.white-btn {
+    border: 4px solid $primary;
+    background-color: $white;
+}
+
+// Buttons
+.site-header .spark-btn {
+
+    &:hover {
+        background-color: $dark-gray;
+        color: $white;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+.site-header .main-navigation ul li.spark-btn a:hover {
+    color: $white;
+    text-decoration: none;
+}
+
+.content-bg {
+    background-color: #fff;
+    box-shadow: 2px 4px 20px #848484;
+    margin-top: -60px;
+    margin-bottom: 40px;
+
+    .row {
+        padding: 45px;
+
+        @media (max-width: 768px) {
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0;
+    }
+}
+
+// Page Template 
+.slim-page {
+    max-width: 980px !important;
+}
+
+// Search 
+.search-container {
+    margin-top: 30px;
+
+    .search-form {
+        input.search-field {
+            border-radius: 4px;
+            border: 1px solid $primary;
+            color: $dark-gray;
+            font-family: $heading;
+            padding: 5px;
+        }
+
+        input.search-submit {
+            border-radius: 4px;
+            background-color: $primary;
+            border: 1px solid $primary;
+            color: $white;
+            font-family: $heading;
+            padding: 5px 15px;
+            text-transform: uppercase;
+        }
+
+    }
+}

@@ -1,0 +1,307 @@
+// 'Smart' Header Code
+#masthead {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+.header-spacer {
+    margin-top: 70px;
+
+}
+  
+.site-header {
+    background-color: $primary;
+    border-bottom: 1px solid $white;
+    font-family: $heading;
+    
+    .container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1180px;
+
+        button {
+            background: transparent;
+        }
+
+        @media (max-width: 768px) {
+            padding: 10px 0;
+        }
+        
+    }
+
+    .site-branding {
+        padding-top: 6px;
+        width: 25%;
+        
+        a {
+            display: block;
+
+            img {
+                max-width: 100%;
+            }
+            
+            @media (max-width: 768px) {
+                margin-left: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding-top: 0;
+            width: 30%;
+        }
+
+        @media (max-width: 600px) {
+            width: 40%;
+        }
+
+        @media (max-width: 480px) {
+            width: 52%;
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+        
+        @media (max-width: 768px) {
+            display: block;
+            margin-right: 15px;
+            
+            .hamburger {
+                font-size: 24px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            
+                &:before {
+                    color: $white;
+                }
+            }
+
+            // Hide the hamburger icon when the menu is open
+            &[aria-expanded="true"] .hamburger {
+                display: none;
+            }
+        }
+    }
+
+    .main-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: auto;
+        width: 75%;
+
+        @media (min-width: 768px) {
+            .current-menu-item a {
+                color: $secondary;
+            }
+
+            .cta-header-btn.current-menu-item a {
+                color: $white;
+            }
+        }
+
+        // CTA Button
+        .cta-header-btn {
+            background-color: $secondary;
+            border-radius: 25px;
+            padding: 10px 20px;
+            transition: background-color 0.5s ease;
+
+            &:hover {
+                background-color: $white;
+
+                a {
+                    color: $primary;
+                }
+            }
+
+            a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                transition: color 0.5s ease;
+            }
+
+            @media (max-width: 768px) {
+
+                &:hover {
+                    background-color: $white;
+    
+                    a {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            position: fixed;
+            top: 0;
+            justify-content: center;
+            flex-direction: column;
+            right: -100%;
+            height: 100vh;
+            width: 100%;
+            background: #282828da;
+            transition: right 0.3s ease;
+
+            &.toggled {
+                right: 0;
+                z-index: 1000;
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            list-style: none;
+
+            li {
+                margin: 0 15px;
+                position: relative;
+
+                a {
+                    color: $white;
+                    font-weight: 500;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: color 0.5s ease;
+
+                    &:hover {
+                        color: $dark-primary;
+                        text-decoration: underline;
+                    }
+
+                    @media (max-width: 768px) {
+                        font-size: 1.5em;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    margin: 10px 0;
+                }
+
+                // Sub Menu
+                ul {
+                    background-color: $primary;
+                    border: 1px solid $dark-primary;
+                    box-shadow: 0px 7px 14px #50303159;
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    // width: 220px;
+                    z-index: 9999;
+                    
+                    @media (max-width: 768px) {
+                        border: transparent;
+                        background-color: transparent;
+                        position: static;
+                        width: auto;
+                        max-height: 40vh; 
+                        overflow-y: auto;
+                    }
+
+                    li {
+                        border-top: 1px solid $secondary;
+                        padding: 15px;
+
+                        @media (max-width: 768px) {
+                            border-top: 1px solid $white;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+
+                    li:first-of-type {
+                        border-top: transparent;
+                    }
+                }
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+
+            }
+        }
+
+        .menu-close {
+            display: none;
+            position: absolute;
+            top: 23px;
+            right: 20px;
+            color: $white;
+            font-size: 24px;
+
+            &:hover {
+                cursor: pointer;
+            }
+    
+            @media (max-width: 768px) {
+                display: block;
+            }
+        }
+    
+        &.toggled {
+            .menu-close {
+                display: block;
+            }
+        }
+
+        // Social Media Icons
+        .social-media {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-bottom: 20px;
+        
+                a {
+                    background-color: $white;
+                    border-radius: 50%;
+                    display: inline-block;
+                    height: 36px;
+                    width: 36px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    transition: opacity 0.5s ease;
+        
+                    i {
+                        font-size: 1.2em;
+                    }
+        
+                    &:hover {
+                        opacity: .75;
+                    }
+                }
+            }
+
+            i {
+                margin: 0 10px;
+                color: $primary;
+                font-size: 24px;
+            }
+        }
+    }
+
+    @media (min-width: 769px) {
+        .menu-toggle {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.page-template-page-service-landing-page,
+.single-landing_pages {
+    .testimonial {
+        padding: 15px;
+
+        .testimonial-meta {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+
+            .testimonial-headshot {
+                margin-right: 15px;
+
+                .headshot {
+                    min-width: 60px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .testimonial-info {
+                .testimonial-name {
+                    font-weight: 900;
+                    font-size: 1.2rem;
+                }
+
+                .testimonial-stars {
+                    margin-top: 5px;
+
+                    i {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}
