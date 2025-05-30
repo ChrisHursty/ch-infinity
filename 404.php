@@ -28,7 +28,7 @@ echo '</div></div></div></section>';
         <div class="align-center content">
             <div class="content-area text-center">
                 <h2>
-                    <?php esc_html_e( 'It looks like nothing was found at this location', 'us-three' ); ?>
+                    <?php esc_html_e( 'It looks like nothing was found at this location', 'ch-infinity' ); ?>
                 </h2>
                 <div class="button-box">
                     <a href="/" class="spark-btn"><span>Return Home</span></a>

@@ -10,9 +10,9 @@ defined( 'ABSPATH' ) || exit;
 
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title'    => 'Urban Spark Theme Options',
-        'menu_title'    => 'Urban Spark Theme Options',
-        'menu_slug'     => 'us-three-theme-options',
+        'page_title'    => 'CH Infinity Theme Options',
+        'menu_title'    => 'CH Infinity Theme Options',
+        'menu_slug'     => 'ch-infinity-theme-options',
         'capability'    => 'manage_options',
         'redirect'      => false,
     ));
@@ -111,7 +111,7 @@ if (function_exists('acf_add_local_field_group')) {
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'us-three-theme-options',
+                    'value' => 'ch-infinity-theme-options',
                 ),
             ),
         ),

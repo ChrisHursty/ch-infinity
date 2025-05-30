@@ -8,8 +8,8 @@ function mytheme_register_sidebars()
 {
     register_sidebar(array(
         'id'            => 'sidebar-1',
-        'name'          => __('Primary Sidebar', 'us-three'),
-        'description'   => __('The main sidebar appears on the right on each page except the front page template', 'us-three'),
+        'name'          => __('Primary Sidebar', 'ch-infinity'),
+        'description'   => __('The main sidebar appears on the right on each page except the front page template', 'ch-infinity'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<hr><h2 class="widget-title">',

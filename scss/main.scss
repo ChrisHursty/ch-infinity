@@ -1,5 +1,5 @@
 // Import fonts
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 // Variables
 $black: #313131;
@@ -18,9 +18,9 @@ $footer-top-color: $primary;
 $footer-bottom-color: #000;
 
 // Fonts
-$heading: 'Newsreader', serif;
-$sub-heading: 'Newsreader', serif;
-$body: 'Epilogue', sans-serif;
+$heading: 'Rubik', serif;
+$sub-heading: 'Rubik', serif;
+$body: 'Roboto', sans-serif;
 
 // Base Styles
 @import 'base/reset';

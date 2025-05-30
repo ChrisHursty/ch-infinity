@@ -19,7 +19,7 @@ require get_template_directory() . '/inc/widgets.php';
 // Navwalker
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
-function us_three_theme_setup() {
+function ch_infinity_theme_setup() {
     // Add theme support for Automatic Feed Links
     add_theme_support( 'automatic-feed-links' );
 
@@ -28,7 +28,7 @@ function us_three_theme_setup() {
 
     // Register Navigation Menu
     register_nav_menus( array(
-        'primary' => esc_html__( 'Primary Menu', 'us-three' ),
+        'primary' => esc_html__( 'Primary Menu', 'ch-infinity' ),
     ) );
 
     // Add theme support for HTML5 and Title Tag
@@ -46,12 +46,12 @@ function us_three_theme_setup() {
     add_image_size('portfolio_slider', 810, 810, true); // true for hard crop mode
 }
 
-add_action('after_setup_theme', 'us_three_theme_setup');
+add_action('after_setup_theme', 'ch_infinity_theme_setup');
 
 /**
  * Enqueue scripts and styles.
  */
-function us_three_scripts_styles() {
+function ch_infinity_scripts_styles() {
     // Enqueue Owl Carousel & Magnific Popup Stuff
     wp_enqueue_style('owl-carousel-css', get_template_directory_uri() . '/library/owl-carousel/css/owl.carousel.min.css');
     wp_enqueue_style('magnific-popup-css', get_template_directory_uri() . '/library/magnific-popup/magnific-popup.css');
@@ -63,11 +63,11 @@ function us_three_scripts_styles() {
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/library/font-awesome/font-awesome-5-15-4l.min.css');
 
     // Theme CSS
-    wp_enqueue_style( 'us-three-style', get_template_directory_uri() . '/dist/css/main.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_style( 'ch-infinity-style', get_template_directory_uri() . '/dist/css/main.min.css', array(), '1.0.0', 'all');
 
     // Theme JS
-    wp_enqueue_script('us-three-main-js', get_template_directory_uri() . '/dist/js/main.min.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('chris-hurst-smart-header-js', get_template_directory_uri() . '/dist/js/smart-header.min.js', array(), '1.0.0', true);
+    wp_enqueue_script('ch-infinity-main-js', get_template_directory_uri() . '/dist/js/main.min.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script('ch-infinity-smart-header-js', get_template_directory_uri() . '/dist/js/smart-header.min.js', array(), '1.0.0', true);
 
     // Check if we are on a single post or the single-portfolio.php template
     if (is_single() && (is_singular('post') || is_singular('portfolio'))) {
@@ -79,17 +79,17 @@ function us_three_scripts_styles() {
         wp_enqueue_script('single-portfolio-js', get_template_directory_uri() . '/js/single-portfolio.js', array('jquery', 'owl-carousel-js', 'magnific-popup-js'), '1.0.0', true);
     }
     // Register and Enqueue a Script
-    // wp_enqueue_script( 'us-three-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20201208', true );
+    // wp_enqueue_script( 'ch-infinity-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20201208', true );
 }
 
-add_action( 'wp_enqueue_scripts', 'us_three_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'ch_infinity_scripts_styles' );
 
-function us_three_admin_styles() {
-    wp_enqueue_style('us-three-admin-styles', get_template_directory_uri() . '/dist/css/admin-styles.min.css');
+function ch_infinity_admin_styles() {
+    wp_enqueue_style('ch-infinity-admin-styles', get_template_directory_uri() . '/dist/css/admin-styles.min.css');
     wp_enqueue_media();
     wp_enqueue_script('portfolio-thumbnail-uploader', get_template_directory_uri() . '/dist/js/portfolio-thumbnail-uploader.min.js', array('jquery'), null, true);
 }
-add_action('admin_enqueue_scripts', 'us_three_admin_styles');
+add_action('admin_enqueue_scripts', 'ch_infinity_admin_styles');
 
 
 // SVG upload compatibility
@@ -160,20 +160,20 @@ add_action( 'wp_enqueue_scripts', 'ccs_enqueue_scripts_and_styles' );
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 
 // Custom Image for Portfolio Grid
-function us_three_add_portfolio_thumbnail_meta_box() {
+function ch_infinity_add_portfolio_thumbnail_meta_box() {
     add_meta_box(
         'portfolio_thumbnail_meta_box', // ID of the meta box
         __('Portfolio Thumbnail Image', 'textdomain'), // Title of the meta box
-        'us_three_portfolio_thumbnail_meta_box_html', // Callback function to display the meta box
+        'ch_infinity_portfolio_thumbnail_meta_box_html', // Callback function to display the meta box
         'portfolio', // Post type
         'side', // Context ('normal', 'side', and 'advanced')
         'low' // Priority
     );
 }
 
-add_action('add_meta_boxes', 'us_three_add_portfolio_thumbnail_meta_box');
+add_action('add_meta_boxes', 'ch_infinity_add_portfolio_thumbnail_meta_box');
 
-function us_three_portfolio_thumbnail_meta_box_html($post) {
+function ch_infinity_portfolio_thumbnail_meta_box_html($post) {
     $thumbnail_id = get_post_meta($post->ID, '_portfolio_thumbnail_id', true);
     echo '<input type="hidden" id="portfolio_thumbnail_id" name="portfolio_thumbnail_id" value="' . esc_attr($thumbnail_id) . '">';
     echo '<button id="portfolio_thumbnail_button" class="button">' . __('Select Image', 'textdomain') . '</button>';
@@ -186,7 +186,7 @@ function us_three_portfolio_thumbnail_meta_box_html($post) {
     wp_nonce_field('portfolio_thumbnail_nonce_action', 'portfolio_thumbnail_nonce');
 }
 
-function us_three_save_portfolio_thumbnail($post_id) {
+function ch_infinity_save_portfolio_thumbnail($post_id) {
     // Verify the nonce before proceeding.
     if (!isset($_POST['portfolio_thumbnail_nonce']) || !wp_verify_nonce($_POST['portfolio_thumbnail_nonce'], 'portfolio_thumbnail_nonce_action')) {
         return;
@@ -202,7 +202,7 @@ function us_three_save_portfolio_thumbnail($post_id) {
     }
 }
 
-add_action('save_post_portfolio', 'us_three_save_portfolio_thumbnail');
+add_action('save_post_portfolio', 'ch_infinity_save_portfolio_thumbnail');
 
 function register_random_posts_widget() {
     register_widget('Random_Posts_Widget');

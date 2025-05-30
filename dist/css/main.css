@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /* Reset Margin, Padding, and Box Sizing */
 *,
 *::before,
@@ -129,7 +129,7 @@ input:-webkit-autofill:active {
 
 body {
   background-color: #ffffff;
-  font-family: "Epilogue", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body.admin-bar {
@@ -204,7 +204,7 @@ figure {
   background-color: var(--secondary-color);
   border-radius: 50px;
   display: inline-block;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.5px;
@@ -283,7 +283,7 @@ figure {
   border-radius: 4px;
   border: 1px solid var(--primary-color);
   color: #363636;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   padding: 5px;
 }
 .search-container .search-form input.search-submit {
@@ -291,7 +291,7 @@ figure {
   background-color: var(--primary-color);
   border: 1px solid var(--primary-color);
   color: #ffffff;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   padding: 5px 15px;
   text-transform: uppercase;
 }
@@ -620,13 +620,13 @@ html {
 /* Define variables for minimum, preferred, and maximum font sizes */
 /* Apply responsive font size using clamp() */
 h1 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 40px, 48px);
   line-height: 1.1;
 }
 
 h2 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 37px, 45px);
   font-weight: 300;
   line-height: 1.1;
@@ -634,7 +634,7 @@ h2 {
 }
 
 h3 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 24px, 32px);
   font-weight: 900;
   line-height: 1.4;
@@ -643,21 +643,21 @@ h3 {
 }
 
 h4 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 18px, 26px);
   line-height: 1.5;
   /* Set your desired line height */
 }
 
 h5 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 24px, 32px);
   line-height: 1.6;
   /* Set your desired line height */
 }
 
 h6 {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: clamp(20px, 20px, 28px);
   line-height: 1.7;
   /* Set your desired line height */
@@ -723,7 +723,7 @@ strong {
 .site-header {
   background-color: var(--primary-color);
   border-bottom: 1px solid #ffffff;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
 }
 .site-header .container {
   -webkit-box-align: center;
@@ -1142,7 +1142,7 @@ footer .calendly-sticky-btn a i {
   padding: 10px 20px;
   font-weight: 500;
   font-size: 16px;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: background-color 0.5s ease;
@@ -1274,7 +1274,7 @@ footer .calendly-sticky-btn a i {
 }
 .home-hero .row h1 {
   color: var(--light-primary-color);
-  font-family: "Epilogue", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
   margin-bottom: 30px;
@@ -1703,7 +1703,7 @@ footer .calendly-sticky-btn a i {
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 .portfolio-item .portfolio-overlay span {
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: 1.4em;
   font-weight: 900;
   line-height: 1.5;
@@ -1794,7 +1794,7 @@ footer .calendly-sticky-btn a i {
 .hero-title-area .row .genre-link a {
   background-color: var(--primary-color);
   display: inline-block;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   margin: 15px 10px;
   padding: 10px 15px;
   -webkit-transition: background-color 0.5s ease;
@@ -1885,7 +1885,7 @@ footer .calendly-sticky-btn a i {
 }
 .sidebar h3 {
   color: var(--primary-color);
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: 22px;
   margin-top: 0;
   margin-bottom: 30px;
@@ -1942,7 +1942,7 @@ footer .calendly-sticky-btn a i {
 }
 .single-card .content h3 {
   color: #363636;
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: 1.5em;
   text-transform: capitalize;
 }
@@ -1968,7 +1968,7 @@ footer .calendly-sticky-btn a i {
 .random_posts_widget h2,
 .random_portfolio_widget h2 {
   color: var(--primary-color);
-  font-family: "Newsreader", serif;
+  font-family: "Rubik", serif;
   font-size: 1.4rem;
   margin: 10px 0;
 }

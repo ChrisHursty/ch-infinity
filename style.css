@@ -4,10 +4,13 @@ Theme URI: https://urbanwp.com/
 Author: Chris Hurst
 Author URI: https://iamchrishurst.com/
 Description: A versatile WP Theme for multiple industries
-Version: 3.0.0
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: us-three
+Text Domain: ch-infinity
+Requires at least: 5.0
+Requires PHP: 7.0
+Tested up to: 6.3
 Tags: portfolio, blog, responsive, modern, clean
 
 This theme, like WordPress, is licensed under the GPL.
