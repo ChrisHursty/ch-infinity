@@ -49,7 +49,8 @@ if ($gallery): ?>
     <section class="container-fw home-carousel-section">
         <div class="container">
             <div class="row align-center text-center">
-                <div class="col-sm-12 col-md-10">
+                <div class="col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
                     <div class="owl-carousel home-page-carousel owl-theme">
                     <?php foreach ($gallery as $image): ?>
                         <div class="carousel-item">
@@ -58,10 +59,54 @@ if ($gallery): ?>
                     <?php endforeach; ?>
                     </div>
                 </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
     </section>
 <?php endif; ?>
+
+<!-- Why Me Block -->
+<section class="container-fw why-me-section">
+    <div class="container">
+        <div class="row center-title">
+            <?php $why_me_title = get_field('why_me_title');
+            if ($why_me_title) {
+                echo '<h2>' . esc_html($why_me_title) . '</h2>';
+            } ?>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 why-me-content-big-container">
+                <h3><?php echo wp_kses_post(get_field('why_me_big_heading')); ?></h3>
+                <div class="why-me-content-big">
+                    <?php
+                    $why_me_content = get_field('why_me_content');
+                    if ($why_me_content) {
+                        echo wp_kses_post($why_me_content);
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <?php $why_me_repeater_list = get_field('why_me_list');
+                if ($why_me_repeater_list): ?>
+                    <ul class="why-me-list">
+                        <?php foreach ($why_me_repeater_list as $item): ?>
+                            <li>
+                                <div class="icon">
+                                    <i class="far fa-check-circle"></i>
+                                </div>
+                                <div class="content">
+                                    <h4><?php echo esc_html($item['list_item']); ?></h4>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </div>
+</section>
 
 <!-- Testimonials -->
 <div class="container-fw testimonials-container dark-bg">

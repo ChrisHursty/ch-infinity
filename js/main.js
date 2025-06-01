@@ -97,14 +97,17 @@ jQuery(document).ready(function($) {
 
 jQuery(document).ready(function($) {
   $('.home-page-carousel').owlCarousel({
-        items: 1,               // Default is 1 slide at a time
-        loop: true,             // Loop back to the first slide
-        nav: false,             // No next/prev arrows
-        dots: true,             // Display dot navigation
-        autoplay: true,         // Auto-advance slides
-        autoplayTimeout: 5000,  // 5 seconds
+        items: 1,
+        loop: true,
+        nav: false,
+        dots: true,
+        navText: [
+            '<span class="owl-nav-custom owl-prev">‹</span>',
+            '<span class="owl-nav-custom owl-next">›</span>'
+        ],
+        autoplay: true,
+        autoplayTimeout: 5000,
         autoplayHoverPause: false,
-        // Make sure Owl uses these breakpoints:
         responsiveClass: true,
         responsive: {
             0: {

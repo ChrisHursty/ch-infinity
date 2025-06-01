@@ -82,10 +82,26 @@
 }
 
 .home-carousel-section {
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+    padding: 60px 0;
+    background-color: $primary;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        @media (max-width: 767px) {
+            display: block;
+        }
+    }
 
     .owl-carousel {
+
+        .owl-stage-outer {
+            border: 1px solid #737373;
+            border-radius: 10px;
+        }
+        
         .carousel-item {
             img {
                 width: 100%;
@@ -96,48 +112,164 @@
 
         .owl-nav {
             position: absolute;
-            top: 50%;
+            top: 42%;
             width: 100%;
             display: flex;
             justify-content: space-between;
             transform: translateY(-50%);
+            pointer-events: none;
 
-            .carousel-prev,
-            .carousel-next {
-                font-size: 2rem;
-                color: #333;
-                background: rgba(255, 255, 255, 0.8);
-                padding: 0.5rem 1rem;
-                border-radius: 50%;
+            .owl-nav-custom {
+                font-size: 3rem;
+                background-color: transparent;
+                color: $secondary;
                 cursor: pointer;
-                transition: background 0.3s ease;
+                pointer-events: auto;
+                transition: all 0.2s ease;
 
                 &:hover {
-                    background: #ddd;
+                    background-color: transparent;
+                    color: $light-primary;
+                    transform: scale(1.1);
                 }
             }
-        }
 
-        .owl-dots {
-            text-align: center;
-            margin-top: 1rem;
+            button.owl-prev {
+                margin: 0;
+                position: absolute;
+                left: -40px;
+                top: 42%;
+            }
 
-            .owl-dot {
-                display: inline-block;
-                width: 12px;
-                height: 12px;
-                margin: 0 4px;
-                background: #ccc;
-                border-radius: 50%;
+            button.owl-next {
+                margin: 0;
+                position: absolute;
+                right: -40px;
+                top: 42%;
+            }
 
-                &.active {
-                    background: #333;
-                }
+            @media (max-width: 767px) {
+                display: none;
             }
         }
     }
 }
 
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background-color: transparent;
+    color: $secondary;
+}
+
+.why-me-section {
+    padding: 60px 0;
+    background-color: $primary; // fallback
+    background: linear-gradient(
+    to bottom,
+    #02264b,
+    darken(#02264b, 10%)
+    );
+    color: $white;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 15px;
+            
+        }
+    }
+
+    .row {
+        align-items: center;
+
+        @media (max-width: 767px) {
+            flex-grow: 1;
+        }
+    }
+
+    .why-me-content-big-container {
+        border-left: 5px solid $primary;
+        border-radius: 10px;
+        padding: 70px 15px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $black;
+            border-left: 5px solid $secondary;
+        }
+
+        @media (max-width: 767px) {
+            border-left: none;
+            border-top: 5px solid $secondary;
+            padding: 10px;
+
+            &:hover {
+                background-color: $black;
+                border-left: none;
+                border-top: 5px solid $secondary;
+            }
+        }
+    }
+
+    h3 {
+        font-weight: 700;
+    }
+
+    .why-me-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #01478f;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease-in-out;
+
+            @media (max-width: 767px) {
+                margin-left: 0;
+            }
+
+            .icon {
+                padding-top: 4px;
+                i {
+                    font-size: 1.4rem;
+                    color: $secondary;
+                    flex-shrink: 0;
+
+                    @media (max-width: 767px) {
+                        font-size: 0.9rem;
+                    }
+                }
+            } 
+
+            .content {
+                margin-left: 10px;
+
+                h4 {
+                    font-weight: 100;
+
+                    @media (max-width: 767px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: $black;
+                border: 1px solid $secondary;
+                border-left: 5px solid $secondary;
+            }
+        }
+    }
+}
 
 .faq-section {
     padding: 30px 0;
