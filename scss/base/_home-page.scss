@@ -170,7 +170,7 @@
     );
     color: $white;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1180px) {
         padding: 15px;
     }
 
@@ -218,54 +218,65 @@
     h3 {
         font-weight: 700;
     }
-
-    .why-me-list {
-        display: flex;
-        flex-direction: column;
-        list-style-type: none;
-
-        li {
+    
+    .why-me-list-container {
+        @media (max-width: 767px) {
+            margin-left: 0;
+            min-width: 100%;
+            width: 100%;
+        }
+    
+        .why-me-list {
             display: flex;
-            align-items: center;
-            padding: 15px;
-            border: 1px solid #01478f;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease-in-out;
+            flex-direction: column;
+            list-style-type: none;
 
-            @media (max-width: 767px) {
-                margin-left: 0;
-            }
+            li {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                border: 1px solid #01478f;
+                border-radius: 5px;
+                margin-bottom: 15px;
+                transition: all 0.3s ease-in-out;
+                
 
-            .icon {
-                padding-top: 4px;
-                i {
-                    font-size: 1.4rem;
-                    color: $secondary;
-                    flex-shrink: 0;
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                    min-width: 100%;
+                    width: 100%;
+                }
 
-                    @media (max-width: 767px) {
-                        font-size: 0.9rem;
+                .icon {
+                    padding-top: 4px;
+                    i {
+                        font-size: 1.4rem;
+                        color: $secondary;
+                        flex-shrink: 0;
+
+                        @media (max-width: 767px) {
+                            font-size: 0.9rem;
+                        }
+                    }
+                } 
+
+                .content {
+                    margin-left: 10px;
+
+                    h4 {
+                        font-weight: 100;
+
+                        @media (max-width: 767px) {
+                            font-size: 16px;
+                        }
                     }
                 }
-            } 
 
-            .content {
-                margin-left: 10px;
-
-                h4 {
-                    font-weight: 100;
-
-                    @media (max-width: 767px) {
-                        font-size: 16px;
-                    }
+                &:hover {
+                    background-color: $black;
+                    border: 1px solid $secondary;
+                    border-left: 5px solid $secondary;
                 }
-            }
-
-            &:hover {
-                background-color: $black;
-                border: 1px solid $secondary;
-                border-left: 5px solid $secondary;
             }
         }
     }

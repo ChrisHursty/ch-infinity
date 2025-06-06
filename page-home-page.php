@@ -3,7 +3,7 @@
 /**
  * Template Name: Home Page 2025
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.
@@ -88,7 +88,7 @@ if ($gallery): ?>
                     ?>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12 col-md-8 why-me-list-container">
                 <?php $why_me_repeater_list = get_field('why_me_list');
                 if ($why_me_repeater_list): ?>
                     <ul class="why-me-list">
@@ -106,6 +106,7 @@ if ($gallery): ?>
                 <?php endif; ?>
             </div>
         </div>
+    </div>
 </section>
 
 <!-- Testimonials -->

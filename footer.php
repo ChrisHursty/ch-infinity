@@ -3,7 +3,7 @@
 /**
  * The footer for our theme
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.

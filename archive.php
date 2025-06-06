@@ -3,7 +3,7 @@
 /**
  * Blog Archive
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.
@@ -17,6 +17,7 @@ get_header();
                 <h1><?php the_field('archive_title', 'option'); ?></h1>
             </div>
         </div>
+    </div>
 </section>
 
 <section class="container content-bg">

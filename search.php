@@ -4,7 +4,7 @@
  * The template for displaying search results pages
  *
  * @package WordPress
- * @package US Three
+ * @package CH Infinity
  * @since 1.0.0
  */
 

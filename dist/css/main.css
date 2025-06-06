@@ -1416,7 +1416,7 @@ footer .calendly-sticky-btn a i {
   background: linear-gradient(to bottom, #02264b, rgb(0.6753246753, 12.8311688312, 25.3246753247));
   color: #ffffff;
 }
-@media (max-width: 767px) {
+@media (max-width: 1180px) {
   .why-me-section {
     padding: 15px;
   }
@@ -1467,7 +1467,14 @@ footer .calendly-sticky-btn a i {
 .why-me-section h3 {
   font-weight: 700;
 }
-.why-me-section .why-me-list {
+@media (max-width: 767px) {
+  .why-me-section .why-me-list-container {
+    margin-left: 0;
+    min-width: 100%;
+    width: 100%;
+  }
+}
+.why-me-section .why-me-list-container .why-me-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1477,7 +1484,7 @@ footer .calendly-sticky-btn a i {
           flex-direction: column;
   list-style-type: none;
 }
-.why-me-section .why-me-list li {
+.why-me-section .why-me-list-container .why-me-list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1492,36 +1499,38 @@ footer .calendly-sticky-btn a i {
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 767px) {
-  .why-me-section .why-me-list li {
+  .why-me-section .why-me-list-container .why-me-list li {
     margin-left: 0;
+    min-width: 100%;
+    width: 100%;
   }
 }
-.why-me-section .why-me-list li .icon {
+.why-me-section .why-me-list-container .why-me-list li .icon {
   padding-top: 4px;
 }
-.why-me-section .why-me-list li .icon i {
+.why-me-section .why-me-list-container .why-me-list li .icon i {
   font-size: 1.4rem;
   color: var(--secondary-color);
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
 @media (max-width: 767px) {
-  .why-me-section .why-me-list li .icon i {
+  .why-me-section .why-me-list-container .why-me-list li .icon i {
     font-size: 0.9rem;
   }
 }
-.why-me-section .why-me-list li .content {
+.why-me-section .why-me-list-container .why-me-list li .content {
   margin-left: 10px;
 }
-.why-me-section .why-me-list li .content h4 {
+.why-me-section .why-me-list-container .why-me-list li .content h4 {
   font-weight: 100;
 }
 @media (max-width: 767px) {
-  .why-me-section .why-me-list li .content h4 {
+  .why-me-section .why-me-list-container .why-me-list li .content h4 {
     font-size: 16px;
   }
 }
-.why-me-section .why-me-list li:hover {
+.why-me-section .why-me-list-container .why-me-list li:hover {
   background-color: #313131;
   border: 1px solid var(--secondary-color);
   border-left: 5px solid var(--secondary-color);
@@ -2086,4 +2095,30 @@ footer .calendly-sticky-btn a i {
 .page-template-page-service-landing-page .testimonial .testimonial-meta .testimonial-info .testimonial-stars i,
 .single-landing_pages .testimonial .testimonial-meta .testimonial-info .testimonial-stars i {
   margin-right: 2px;
+}
+
+.service-card {
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.service-card:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.service-card .service-icon-img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 15px;
+}
+.service-card .btn {
+  margin-top: 15px;
 }

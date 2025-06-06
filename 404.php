@@ -4,7 +4,7 @@
  * The template for displaying 404 pages (Not Found)
  *
  * @package WordPress
- * @package US Three
+ * @package CH Infinity
  * @since 3.0.0
  */
 get_header(); 

@@ -2,7 +2,7 @@
 /**
  * Urban Spark Custom Post Types
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.
@@ -217,4 +217,41 @@ function ch_infinity_faq_cpt() {
 }
 add_action( 'init', 'ch_infinity_faq_cpt' );
 
+// Services CPT
+function ch_infinity_services_cpt() {
+    $labels = array(
+        'name'               => _x( 'Services', 'post type general name', 'ch-infinity' ),
+        'singular_name'      => _x( 'Service', 'post type singular name', 'ch-infinity' ),
+        'menu_name'          => _x( 'Services', 'admin menu', 'ch-infinity' ),
+        'name_admin_bar'     => _x( 'Service', 'add new on admin bar', 'ch-infinity' ),
+        'add_new'            => _x( 'Add New', 'service', 'ch-infinity' ),
+        'add_new_item'       => __( 'Add New Service', 'ch-infinity' ),
+        'new_item'           => __( 'New Service', 'ch-infinity' ),
+        'edit_item'          => __( 'Edit Service', 'ch-infinity' ),
+        'view_item'          => __( 'View Service', 'ch-infinity' ),
+        'all_items'          => __( 'All Services', 'ch-infinity' ),
+        'search_items'       => __( 'Search Services', 'ch-infinity' ),
+        'not_found'          => __( 'No services found.', 'ch-infinity' ),
+        'not_found_in_trash' => __( 'No services found in Trash.', 'ch-infinity' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'services' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => null,
+        'menu_icon'          => 'dashicons-hammer',
+        'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    );
+
+    register_post_type( 'services', $args );
+}
+add_action( 'init', 'ch_infinity_services_cpt' );
 

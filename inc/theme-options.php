@@ -2,7 +2,7 @@
 /**
  * US Three functions and definitions
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.

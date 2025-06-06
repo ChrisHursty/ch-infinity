@@ -3,7 +3,7 @@
 /**
  * Template Name: Service Landing Page 2025
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.

@@ -5,7 +5,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.

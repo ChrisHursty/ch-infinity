@@ -3,7 +3,7 @@
 /**
  * Template Name: Slim Page, One Column
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.

@@ -2,7 +2,7 @@
 /**
  * Single Post Template
  *
- * @package US Three
+ * @package CH Infinity
  */
 
 // Exit if accessed directly.
