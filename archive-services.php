@@ -14,7 +14,7 @@ get_header();
         <div class="row">
             <div class="col-12 align-center text-center">
                 <h1><?php post_type_archive_title(); ?></h1>
-                <p>Browse the services I offer to help grow your business.</p>
+                <p class="services-intro">Browse the services I offer to help grow your business.</p>
             </div>
         </div>
     </div>

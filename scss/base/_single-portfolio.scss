@@ -18,6 +18,10 @@
 .single-portfolio {
     background-color: #f4f4f4;
 
+    .content-bg {
+        margin-top: 0;
+    }
+
     .single-port-intro p {
         font-size: 18px;
         line-height: 1.6;
@@ -43,11 +47,11 @@
     a {
         text-decoration: underline;
         text-transform: uppercase;
-        color: red;
+        color: $secondary
     }
 
     img {
-        border-radius: 20px;
+        border-radius: 10px;
         max-width: 100%;
         height: auto;
 

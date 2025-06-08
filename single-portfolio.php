@@ -48,9 +48,29 @@ if (is_singular('portfolio')) {
         echo '</div></div></section>';
     }
 }
-
 ?>
-
+<section class="container-fw">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>Click an Image to magnify</h3>
+            <?php while (have_posts()) : the_post();
+                $images = get_field('portfolio_images');
+                if ($images) : ?>
+                    <div class="owl-carousel portfolio-carousel">
+                        <?php foreach ($images as $image) : ?>
+                            <div class="item">
+                                <!-- Link for Magnific-Popup -->
+                                <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
+                                    <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+            <?php endif;
+            endwhile; ?>
+        </div>
+    </div>
+</section>
 <section class="container content-bg">
     <div class="row">
         <div class="col-12 col-md-8 content">
@@ -85,28 +105,6 @@ if (is_singular('portfolio')) {
             </div>
         </div>
     </div><!-- .row -->
-</section>
-<section class="container-fw">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h3>Click an Image to magnify</h3>
-            <?php while (have_posts()) : the_post();
-                $images = get_field('portfolio_images');
-                if ($images) : ?>
-                    <div class="owl-carousel portfolio-carousel">
-                        <?php foreach ($images as $image) : ?>
-                            <div class="item">
-                                <!-- Link for Magnific-Popup -->
-                                <a href="<?php echo esc_url($image['url']); ?>" title="<?php echo esc_attr($image['caption']); ?>">
-                                    <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-            <?php endif;
-            endwhile; ?>
-        </div>
-    </div>
 </section>
 
 <!-- CTA -->

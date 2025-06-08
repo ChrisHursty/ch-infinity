@@ -1,5 +1,5 @@
 footer {
-    background: linear-gradient(to bottom, $footer-top-color, $footer-bottom-color);
+    background: #000;
     padding: 30px 0 10px;
     position: relative;
 
@@ -27,7 +27,7 @@ footer {
         margin-bottom: 20px;
 
         a {
-            background-color: $white;
+            background-color: $secondary;
             border-radius: 50%;
             display: inline-block;
             height: 36px;

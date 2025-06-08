@@ -78,7 +78,7 @@ figure {
 }
 
 .dark-bg {
-    background: linear-gradient(to right, $light-primary, $dark-primary);
+    background: linear-gradient(to right, $primary, $dark-primary);
     color: $white;
 }
 
@@ -101,7 +101,8 @@ figure {
 }
 
 // Buttons
-.infinity-btn {
+.infinity-btn,
+.spark-btn {
     background-color: $light-primary;
     border-radius: 50px;
     display: inline-block;

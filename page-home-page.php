@@ -182,6 +182,55 @@ if ($gallery): ?>
     </div>
 </div>
 
+<section class="container-fw blog-preview-section">
+    <div class="container">
+        <div class="row blog-grid">
+            <?php
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 3,
+                'orderby'        => 'rand',
+            );
+            $random_posts = new WP_Query($args);
+            $fallback_img = get_field('portfolio_bg_image', 'option');
+
+            if ($random_posts->have_posts()) :
+                while ($random_posts->have_posts()) : $random_posts->the_post();
+                    $categories = get_the_category();
+                    $category_name = $categories ? esc_html($categories[0]->name) : 'Blog';
+                    $thumbnail_id = get_post_thumbnail_id();
+                    $image_url = $thumbnail_id
+                        ? wp_get_attachment_image_url($thumbnail_id, 'medium_large')
+                        : esc_url(is_array($fallback_img) ? $fallback_img['url'] : $fallback_img);
+            ?>
+                <div class="col-sm-12 col-md-4 blog-card">
+                    <div class="card h-100 d-flex flex-column">
+                        <?php if ($image_url): ?>
+                            <div class="card-img">
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            </div>
+                        <?php endif; ?>
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                                <span class="post-category"><?php echo $category_name; ?></span>
+                                <h3 class="post-title"><?php the_title(); ?></h3>
+                                <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                            </div>
+                            <a href="<?php the_permalink(); ?>" class="read-more-btn mt-auto">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </div>
+</section>
+
+
+
 <!-- FAQ's -->
 <?php get_template_part('template-parts/faqs'); ?>
 <!-- Logo Ticker -->

@@ -185,8 +185,8 @@ figure {
 }
 
 .dark-bg {
-  background: -webkit-gradient(linear, left top, right top, from(var(--light-primary-color)), to(var(--dark-primary-color)));
-  background: linear-gradient(to right, var(--light-primary-color), var(--dark-primary-color));
+  background: -webkit-gradient(linear, left top, right top, from(var(--primary-color)), to(var(--dark-primary-color)));
+  background: linear-gradient(to right, var(--primary-color), var(--dark-primary-color));
   color: #ffffff;
 }
 
@@ -207,7 +207,8 @@ figure {
   z-index: -1;
 }
 
-.infinity-btn {
+.infinity-btn,
+.spark-btn {
   background-color: var(--light-primary-color);
   border-radius: 50px;
   display: inline-block;
@@ -221,7 +222,8 @@ figure {
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
 }
-.infinity-btn span {
+.infinity-btn span,
+.spark-btn span {
   color: var(--primary-color);
   display: block;
   height: 100%;
@@ -229,11 +231,14 @@ figure {
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
 }
-.infinity-btn:hover {
+.infinity-btn:hover,
+.spark-btn:hover {
   background-color: var(--secondary-color);
   color: #ffffff;
 }
-.infinity-btn:hover span, .infinity-btn:hover a {
+.infinity-btn:hover span, .infinity-btn:hover a,
+.spark-btn:hover span,
+.spark-btn:hover a {
   color: var(--primary-color);
 }
 
@@ -1041,8 +1046,7 @@ strong {
 }
 
 footer {
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--primary-color)), to(#000));
-  background: linear-gradient(to bottom, var(--primary-color), #000);
+  background: #000;
   padding: 30px 0 10px;
   position: relative;
   color: #ffffff;
@@ -1072,7 +1076,7 @@ footer .footer-socials {
   margin-bottom: 20px;
 }
 footer .footer-socials a {
-  background-color: #ffffff;
+  background-color: var(--secondary-color);
   border-radius: 50%;
   display: inline-block;
   height: 36px;
@@ -1557,6 +1561,122 @@ footer .calendly-sticky-btn a i {
   border-left: 5px solid var(--secondary-color);
 }
 
+.testimonial-text h3 {
+  color: var(--secondary-color);
+  font-weight: 100;
+}
+
+.testimonials-container .testimonials-section .testimonial .testimonial-meta .testimonial-info h4.testimonial-name {
+  font-weight: 100;
+}
+
+.blog-preview-section {
+  padding: 60px 0;
+  background-color: #000;
+  color: #fff;
+}
+.blog-preview-section .blog-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.blog-preview-section .blog-card {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.blog-preview-section .blog-card .card {
+  background: #2a2a2a;
+  border: 1px solid #01478f;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.blog-preview-section .blog-card .card:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.blog-preview-section .blog-card .card .card-img img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.blog-preview-section .blog-card .card .card-body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+.blog-preview-section .blog-card .card .card-body .post-category {
+  display: inline-block;
+  background: #444;
+  color: #ddd;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.blog-preview-section .blog-card .card .card-body .post-title {
+  color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 100;
+  margin: 0 0 10px;
+}
+.blog-preview-section .blog-card .card .card-body .post-excerpt {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.blog-preview-section .blog-card .card .card-body .read-more-btn {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #888;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  width: 140px;
+}
+.blog-preview-section .blog-card .card .card-body .read-more-btn:hover {
+  background: #fff;
+  color: #1c1c1c;
+}
+
 .faq-section {
   background-color: var(--primary-color);
   padding: 30px 0;
@@ -1699,6 +1819,10 @@ footer .calendly-sticky-btn a i {
 .post-type-archive-portfolio h3,
 .single-portfolio h3 {
   color: #ffffff;
+}
+.post-type-archive-portfolio .content-area h3,
+.single-portfolio .content-area h3 {
+  color: var(--primary-color);
 }
 
 .portfolio-grid {
@@ -1890,6 +2014,9 @@ footer .calendly-sticky-btn a i {
 .single-portfolio {
   background-color: #f4f4f4;
 }
+.single-portfolio .content-bg {
+  margin-top: 0;
+}
 .single-portfolio .single-port-intro p {
   font-size: 18px;
   line-height: 1.6;
@@ -1915,10 +2042,10 @@ footer .calendly-sticky-btn a i {
 .portfolio-carousel a {
   text-decoration: underline;
   text-transform: uppercase;
-  color: red;
+  color: var(--secondary-color);
 }
 .portfolio-carousel img {
-  border-radius: 20px;
+  border-radius: 10px;
   max-width: 100%;
   height: auto;
 }
@@ -1975,7 +2102,7 @@ footer .calendly-sticky-btn a i {
   }
 }
 .company-ticker {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 .company-ticker h2 {
   color: #ffffff;
@@ -2165,6 +2292,10 @@ footer .calendly-sticky-btn a i {
   margin-right: 2px;
 }
 
+.services-intro {
+  color: #ffffff;
+}
+
 .service-card {
   padding: 10px;
   margin-bottom: 30px;
@@ -2217,4 +2348,15 @@ footer .calendly-sticky-btn a i {
 }
 .service-card .btn:hover span, .service-card .btn:hover a {
   color: var(--primary-color);
+}
+
+.single-services .testimonial {
+  padding: 10px;
+}
+.single-services .testimonial h3 {
+  color: var(--secondary-color);
+  font-weight: 100;
+}
+.single-services .testimonial h4 {
+  font-weight: 300;
 }

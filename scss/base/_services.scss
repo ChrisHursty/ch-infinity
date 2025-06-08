@@ -1,3 +1,7 @@
+.services-intro {
+    color: $white;
+}
+
 .service-card {
     padding: 10px;
     margin-bottom: 30px;
@@ -49,5 +53,20 @@
             }
         }
 
+    }
+}
+
+.single-services {
+    .testimonial {
+        padding: 10px;
+
+        h3 {
+            color: $secondary;
+            font-weight: 100;
+        }
+
+        h4 {
+            font-weight: 300;
+        }
     }
 }
