@@ -110,7 +110,7 @@ if ($gallery): ?>
 </section>
 
 <!-- Testimonials -->
-<div class="container-fw testimonials-container dark-bg">
+<div class="container-fw testimonials-container">
     <div class="container">
         <div class="row center-title">
             <?php $testimonials_title = get_field('testimonials_title', 'option');
@@ -164,11 +164,11 @@ if ($gallery): ?>
                                     <div class="testimonial-info">
                                         <h4 class="testimonial-name"><?php the_title(); ?></h4>
                                         <div class="testimonial-stars">
-                                            <i class="fa fa-star" style="color: #FFD700;"></i>
-                                            <i class="fa fa-star" style="color: #FFD700;"></i>
-                                            <i class="fa fa-star" style="color: #FFD700;"></i>
-                                            <i class="fa fa-star" style="color: #FFD700;"></i>
-                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                            <i class="fa fa-star" style="color: #a5ff00;"></i>
+                                            <i class="fa fa-star" style="color: #a5ff00;"></i>
+                                            <i class="fa fa-star" style="color: #a5ff00;"></i>
+                                            <i class="fa fa-star" style="color: #a5ff00;"></i>
+                                            <i class="fa fa-star" style="color: #a5ff00;"></i>
                                         </div>
                                     </div>
                                 </div>

@@ -1,4 +1,16 @@
 // Common SCSS
+#page {
+    background-color: $primary; // fallback
+    background: linear-gradient(
+    to bottom,
+    #02264b,
+    darken(#02264b, 10%)
+    );
+}
+
+.contact-form-section {
+    background-color: $white;
+}
 
 .screen-reader-text {
     position: absolute;

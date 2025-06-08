@@ -1,5 +1,19 @@
 .testimonials-container {
+    background-color: $primary;
+    background: linear-gradient(
+    to bottom,
+    #02264b,
+    darken(#02264b, 10%)
+    );
     padding: 30px 0;
+
+    h2 {
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: $heading;
+    }
 
     @media (max-width: 1024px) {
         padding: 15px;
@@ -12,6 +26,7 @@
         grid-auto-flow: dense; // Ensures items fill in available space
     
         .testimonial {
+            color: $white;
             margin-bottom: 20px;
 
             // Grid layout for each testimonial

@@ -116,6 +116,16 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
+#page {
+  background-color: var(--primary-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(#02264b), to(rgb(0.6753246753, 12.8311688312, 25.3246753247)));
+  background: linear-gradient(to bottom, #02264b, rgb(0.6753246753, 12.8311688312, 25.3246753247));
+}
+
+.contact-form-section {
+  background-color: #ffffff;
+}
+
 .screen-reader-text {
   position: absolute;
   width: 1px;
@@ -714,7 +724,7 @@ strong {
 }
 
 .header-spacer {
-  margin-top: 85px;
+  margin-top: 80px;
 }
 
 .site-header {
@@ -1158,7 +1168,17 @@ footer .calendly-sticky-btn a i {
 }
 
 .testimonials-container {
+  background-color: var(--primary-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(#02264b), to(rgb(0.6753246753, 12.8311688312, 25.3246753247)));
+  background: linear-gradient(to bottom, #02264b, rgb(0.6753246753, 12.8311688312, 25.3246753247));
   padding: 30px 0;
+}
+.testimonials-container h2 {
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Rubik", serif;
 }
 @media (max-width: 1024px) {
   .testimonials-container {
@@ -1172,6 +1192,7 @@ footer .calendly-sticky-btn a i {
   grid-auto-flow: dense;
 }
 .testimonials-container .testimonials-section .testimonial {
+  color: #ffffff;
   margin-bottom: 20px;
 }
 .testimonials-container .testimonials-section .testimonial:nth-child(1) {
@@ -1537,24 +1558,42 @@ footer .calendly-sticky-btn a i {
 }
 
 .faq-section {
+  background-color: var(--primary-color);
   padding: 30px 0;
 }
-@media (max-width: 767px) {
+@media (max-width: 1180px) {
   .faq-section {
     padding: 15px;
   }
 }
-.faq-section .faq-container {
-  max-width: 800px;
-  margin: 0 auto;
+.faq-section .faq-content-big-container {
+  color: #ffffff;
+}
+@media (min-width: 768px) and (max-width: 1180px) {
+  .faq-section .faq-content-big {
+    padding-left: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .faq-section .faq-content-big {
+    min-width: 100%;
+    width: 100%;
+  }
 }
 .faq-section .faq-item {
-  border-bottom: 1px solid var(--secondary-color);
-  padding: 15px;
   cursor: pointer;
+  padding: 15px;
   width: 100%;
 }
+@media (max-width: 1180px) {
+  .faq-section .faq-item {
+    padding: 5px 0;
+  }
+}
 .faq-section .faq-item .faq-question {
+  border: 1px solid #01478f;
+  border-radius: 5px;
+  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1564,9 +1603,15 @@ footer .calendly-sticky-btn a i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .faq-section .faq-item .faq-question h3 {
+  color: #ffffff;
+  font-weight: 100;
   margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
 }
 .faq-section .faq-item .faq-question i {
   font-size: 1.5rem;
@@ -1576,11 +1621,27 @@ footer .calendly-sticky-btn a i {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   color: var(--secondary-color);
 }
+.faq-section .faq-item .faq-question:hover {
+  background-color: #313131;
+  border: 1px solid var(--secondary-color);
+  border-left: 5px solid var(--secondary-color);
+}
 .faq-section .faq-item .faq-answer {
   margin-top: 10px;
   font-size: 1.1rem;
   line-height: 1.5;
   display: none;
+}
+.faq-section .faq-item .faq-answer p {
+  color: #ffffff;
+  margin: 0;
+}
+.faq-section .faq-item .faq-answer p a {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+.faq-section .faq-item .faq-answer p a:hover {
+  color: var(--light-primary-color);
 }
 .faq-section .faq-item.open .faq-answer {
   display: block;
@@ -1635,6 +1696,11 @@ footer .calendly-sticky-btn a i {
   }
 }
 
+.post-type-archive-portfolio h3,
+.single-portfolio h3 {
+  color: #ffffff;
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1664,7 +1730,7 @@ footer .calendly-sticky-btn a i {
   display: block;
 }
 .portfolio-item .portfolio-overlay {
-  background: var(--dark-primary-color);
+  background: var(--primary-color);
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1720,7 +1786,7 @@ footer .calendly-sticky-btn a i {
   }
 }
 .hero-title-area .row {
-  background: var(--dark-primary-color);
+  background: var(--primary-color);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1779,7 +1845,8 @@ footer .calendly-sticky-btn a i {
   margin: auto;
 }
 .hero-title-area .row .genre-link a {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   display: inline-block;
   font-family: "Rubik", serif;
   margin: 15px 10px;
@@ -1788,7 +1855,7 @@ footer .calendly-sticky-btn a i {
   transition: background-color 0.5s ease;
 }
 .hero-title-area .row .genre-link a:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--light-primary-color);
 }
 @media (max-width: 768px) {
   .hero-title-area .row .genre-link a {
@@ -1931,6 +1998,7 @@ footer .calendly-sticky-btn a i {
   color: #363636;
   font-family: "Rubik", serif;
   font-size: 1.5em;
+  font-weight: 100;
   text-transform: capitalize;
 }
 
@@ -2098,9 +2166,8 @@ footer .calendly-sticky-btn a i {
 }
 
 .service-card {
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 30px;
-  border: 1px solid #eee;
   border-radius: 8px;
   background: #fff;
   -webkit-transition: -webkit-transform 0.2s ease;
@@ -2112,13 +2179,42 @@ footer .calendly-sticky-btn a i {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
 }
+.service-card .card-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+}
+.service-card .card-inner h2.service-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
 .service-card .service-icon-img {
   width: 80px;
   height: 80px;
   -o-object-fit: contain;
      object-fit: contain;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .service-card .btn {
-  margin-top: 15px;
+  margin: 15px auto;
+  max-width: 200px;
+  background-color: var(--primary-color);
+}
+.service-card .btn span {
+  color: var(--secondary-color);
+}
+.service-card .btn:hover {
+  background-color: var(--light-primary-color);
+  color: var(--primary-color);
+}
+.service-card .btn:hover span, .service-card .btn:hover a {
+  color: var(--primary-color);
 }

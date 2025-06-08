@@ -37,12 +37,14 @@ $featured_image_url = $featured_image_url ?: $default_image_url;
 </section>
 
 <!-- Ninja Form Section (Edit form ID as needed) -->
-<section class="container contact-form-section">
-    <div class="row">
-        <div class="col-12 align-center text-center">
-            <h2>Ready to Get Started?</h2>
-            <p>Fill out the form below and I’ll be in touch with a quote.</p>
-            <?php echo do_shortcode('[ninja_form id=1]'); ?>
+<section class="container-fw contact-form-section">
+    <div class="container">    
+        <div class="row">
+            <div class="col-8 align-center text-center">
+                <h2>Ready to Get Started?</h2>
+                <p>Fill out the form below and I’ll be in touch with a quote.</p>
+                <?php echo do_shortcode('[ninja_form id=1]'); ?>
+            </div>
         </div>
     </div>
 </section>

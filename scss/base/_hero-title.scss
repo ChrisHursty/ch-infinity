@@ -11,7 +11,7 @@
     }
 
     .row {
-        background: $dark-primary;
+        background: $primary;
         flex-direction: column;
         padding: 30px;
 
@@ -59,7 +59,8 @@
 
         .genre-link {
             a {
-                background-color: $primary;
+                background-color: $secondary;
+                color: $primary;
                 display: inline-block;
                 font-family: $sub-heading;
                 margin: 15px 10px;
@@ -67,7 +68,7 @@
                 transition: background-color 0.5s ease;
 
                 &:hover {
-                    background-color: $secondary;
+                    background-color: $light-primary;
                 }
 
                 @media (max-width: 768px) {

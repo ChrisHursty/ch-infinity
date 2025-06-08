@@ -1,7 +1,6 @@
 .service-card {
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 30px;
-    border: 1px solid #eee;
     border-radius: 8px;
     background: #fff;
     transition: transform 0.2s ease;
@@ -9,15 +8,46 @@
     &:hover {
         transform: translateY(-5px);
     }
+    
+    .card-inner {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 15px;
+
+        h2.service-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: $primary;
+        }
+
+    }
 
     .service-icon-img {
         width: 80px;
         height: 80px;
         object-fit: contain;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .btn {
-        margin-top: 15px;
+        margin: 15px auto;
+        max-width: 200px;
+        background-color: $primary;
+
+        span {
+            color: $secondary
+        }
+
+        &:hover {
+            background-color: $light-primary;
+            color: $primary;
+
+            span, a {
+                color: $primary;
+            }
+        }
+
     }
 }

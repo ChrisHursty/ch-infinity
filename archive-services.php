@@ -49,7 +49,7 @@ get_header();
                             <p class="service-excerpt"><?php the_field('service_excerpt'); ?></p>
                         <?php endif; ?>
 
-                        <a href="<?php the_permalink(); ?>" class="btn btn-primary">Learn More</a>
+                        <a href="<?php the_permalink(); ?>" class="infinity-btn btn"><span>Learn More</span></a>
                     </div>
                 </div>
             <?php endwhile;
