@@ -2298,7 +2298,6 @@ footer .calendly-sticky-btn a i {
 
 .service-card {
   padding: 10px;
-  margin-bottom: 30px;
   border-radius: 8px;
   background: #fff;
   -webkit-transition: -webkit-transform 0.2s ease;
@@ -2309,6 +2308,11 @@ footer .calendly-sticky-btn a i {
 .service-card:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
+}
+@media (max-width: 767px) {
+  .service-card {
+    width: 100%;
+  }
 }
 .service-card .card-inner {
   display: -webkit-box;

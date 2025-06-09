@@ -4,13 +4,16 @@
 
 .service-card {
     padding: 10px;
-    margin-bottom: 30px;
     border-radius: 8px;
     background: #fff;
     transition: transform 0.2s ease;
 
     &:hover {
         transform: translateY(-5px);
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
     }
     
     .card-inner {
