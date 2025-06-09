@@ -15,11 +15,9 @@ Installation
 1.  **Clone the Repository**:\
     Clone this repository into your WordPress themes directory.
 
-    bash
-
-    Copy code
-
-    `git clone https://github.com/ChrisHursty/ch-infinity`
+```bash
+git clone https://github.com/ChrisHursty/ch-infinity
+```
 
 2.  **Navigate to the Theme Directory**:\
     Change to the theme directory.
@@ -27,51 +25,41 @@ Installation
 3.  **Install Node Modules**:\
     Install the required Node modules.
 
-    bash
-
-    Copy code
-
-    `npm install`
+```bash
+npm install
+```
 
 4.  **Install SASS (If needed)**:\
     If you encounter issues, you may need to install SASS.
 
-    bash
-
-    Copy code
-
-    `npm install sass`
+```bash
+npm install sass
+```
 
 5.  **Configure Local for Live Reload**:\
     Open the `gulpfile.mjs` and update the `proxy` value:
 
-    bash
-
-    Copy code
-
-    `browserSyncInstance.init({
-        proxy: "your_local_site.local/"
-    });`
+```bash
+browserSyncInstance.init({
+    proxy: "your_local_site.local/"
+});
+```
 
 6.  **Running the Development Environment (`gulp serve`)**:\
     Start the development environment with live reloading.
 
-    bash
-
-    Copy code
-
-    `npx gulp`
+```bash
+npx gulp
+```
 
     This will initiate a local development server with BrowserSync, watching for changes to your SCSS, JS, and PHP files and automatically reloading the browser.
 
 7.  **Building for Production (`gulp build`)**:\
     To prepare your theme for production:
 
-    bash
-
-    Copy code
-
-    `gulp build`
+```bash
+gulp build
+```
 
     This command compiles SASS, minifies CSS and JS files, optimizes images, and packages your theme into a zip file. Be sure to run this before deploying the theme.
 
