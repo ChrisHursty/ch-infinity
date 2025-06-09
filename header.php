@@ -85,7 +85,7 @@ defined('ABSPATH') || exit;
                                 $icon_type   = get_sub_field('icon_type');
                                 $icon_color  = get_sub_field('icon_color');
 
-                                echo '<a href="' . esc_url($profile_url) . '" style="color:' . esc_attr($icon_color) . ';" target="_blank" rel=noopener noreferrer>';
+                                echo '<a href="' . esc_url($profile_url) . '" style="color:' . esc_attr($icon_color) . ';" target="_blank" rel="noopener noreferrer">';
 
                                 if ($icon_type === 'fontawesome') {
                                     $fontawesome_class = get_sub_field('fontawesome_class');
