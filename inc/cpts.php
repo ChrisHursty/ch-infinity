@@ -82,7 +82,8 @@ function portfolio() {
 		'description'           => __( 'Post Type Description', 'ch-infinity' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
-		'taxonomies'            => array( 'post_tag', 'genres' ),
+                // Associate the custom Genre taxonomy correctly
+                'taxonomies'            => array( 'post_tag', 'genre' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
