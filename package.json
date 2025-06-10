@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +21,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^6.0.0",
+    "jest": "^30.0.0",
+    "jsdom": "^26.1.0",
     "sass": "^1.70.0"
   }
 }
