@@ -52,11 +52,11 @@ if ($gallery): ?>
                 <div class="col-md-2"></div>
                 <div class="col-sm-12 col-md-8">
                     <div class="owl-carousel home-page-carousel owl-theme">
-                    <?php foreach ($gallery as $image): ?>
-                        <div class="carousel-item">
-                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                        </div>
-                    <?php endforeach; ?>
+                        <?php foreach ($gallery as $image): ?>
+                            <div class="carousel-item">
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="col-md-2"></div>
@@ -106,6 +106,53 @@ if ($gallery): ?>
                 <?php endif; ?>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="container-fw dark-bg home-services">
+    <div class="container">
+        <div class="row center-title">
+            <h2>Services</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row grid-row">
+            <?php
+            $args = array(
+                'post_type'      => 'services',
+                'posts_per_page' => 6,
+                'meta_key'       => 'add_to_homepage',
+                'meta_value'     => true,
+                'orderby'        => 'menu_order',
+                'order'          => 'ASC',
+            );
+            $home_services = new WP_Query($args);
+
+            if ($home_services->have_posts()) :
+                while ($home_services->have_posts()) : $home_services->the_post();
+                    $icon = get_field('service_icon');
+            ?>
+                    <div class="col-sm-12 col-md-6 col-lg-4 service-card">
+                        <div class="card-inner align-center text-center">
+                            <?php if (!empty($icon)) : ?>
+                                <div class="service-icon">
+                                    <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?? 'Service Icon'); ?>" class="service-icon-img" />
+                                </div>
+                            <?php endif; ?>
+                            <h2 class="service-title"><?php the_title(); ?></h2>
+                            <?php if (get_field('service_excerpt')) : ?>
+                                <p class="service-excerpt"><?php the_field('service_excerpt'); ?></p>
+                            <?php endif; ?>
+                            <a href="<?php the_permalink(); ?>" class="infinity-btn btn"><span>Learn More</span></a>
+                        </div>
+                    </div>
+            <?php endwhile;
+            endif;
+            wp_reset_postdata();
+            ?>
+        </div>
+        <a href="/services" class="home-services-link infinity-btn center-title" role="link"><span>ALL SERVICES</span></a>
     </div>
 </section>
 
@@ -203,23 +250,23 @@ if ($gallery): ?>
                         ? wp_get_attachment_image_url($thumbnail_id, 'medium_large')
                         : esc_url(is_array($fallback_img) ? $fallback_img['url'] : $fallback_img);
             ?>
-                <div class="col-sm-12 col-md-4 blog-card">
-                    <div class="card h-100 d-flex flex-column">
-                        <?php if ($image_url): ?>
-                            <div class="card-img">
-                                <img src="<?php echo $image_url; ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                    <div class="col-sm-12 col-md-4 blog-card">
+                        <div class="card h-100 d-flex flex-column">
+                            <?php if ($image_url): ?>
+                                <div class="card-img">
+                                    <img src="<?php echo $image_url; ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+                                </div>
+                            <?php endif; ?>
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <span class="post-category"><?php echo $category_name; ?></span>
+                                    <h3 class="post-title"><?php the_title(); ?></h3>
+                                    <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                                </div>
+                                <a href="<?php the_permalink(); ?>" class="read-more-btn mt-auto">Read More</a>
                             </div>
-                        <?php endif; ?>
-                        <div class="card-body d-flex flex-column justify-content-between">
-                            <div>
-                                <span class="post-category"><?php echo $category_name; ?></span>
-                                <h3 class="post-title"><?php the_title(); ?></h3>
-                                <p class="post-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
-                            </div>
-                            <a href="<?php the_permalink(); ?>" class="read-more-btn mt-auto">Read More</a>
                         </div>
                     </div>
-                </div>
             <?php
                 endwhile;
                 wp_reset_postdata();

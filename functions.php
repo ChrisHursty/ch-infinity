@@ -242,31 +242,31 @@ function flush_rewrite_rules_after_options_save( $post_id ) {
     }
 }
 
-function get_visitor_location() {
-    $api_key = '9d38980ad55111';  // Replace with your IPinfo API key
-    $ip_address = $_SERVER['REMOTE_ADDR'];
-    
-    // Check if the IP is local (127.0.0.1 or ::1 for IPv6), use a test IP instead
-    if ($ip_address == '127.0.0.1' || $ip_address == '::1') {
-        $ip_address = '8.8.8.8';  // Use a public IP for testing, e.g., Google's DNS
-    }
-    
-    // Fetch location data from the API
-    $response = wp_remote_get("https://ipinfo.io/{$ip_address}/json?token={$api_key}");
-    
-    if( is_wp_error( $response ) ) {
-        return false;
-    }
-    
-    $data = json_decode(wp_remote_retrieve_body($response));
-    
-    if (isset($data->city)) {
-        return $data->city . ', ' . $data->region;
-    } else {
-        return 'Your Location';
+// Register a custom meta field for services to add them to the homepage
+function ch_register_service_homepage_meta() {
+    register_post_meta('services', 'add_to_homepage', array(
+        'type'              => 'boolean',
+        'show_in_rest'      => true,
+        'single'            => true,
+        'auth_callback'     => function () {
+            return current_user_can('edit_posts');
+        },
+    ));
+}
+add_action('init', 'ch_register_service_homepage_meta');
+
+// Add a checkbox to the services post type to mark it for homepage display
+function ch_add_homepage_column($columns) {
+    $columns['add_to_homepage'] = __('Add to homepage?', 'ch-infinity');
+    return $columns;
+}
+add_filter('manage_services_posts_columns', 'ch_add_homepage_column');
+
+// Save the checkbox value when the service post is saved
+function ch_render_homepage_column($column, $post_id) {
+    if ($column === 'add_to_homepage') {
+        $checked = get_post_meta($post_id, 'add_to_homepage', true);
+        echo $checked ? '✅' : '—';
     }
 }
-
-// Usage Example
-$location = get_visitor_location();
-
+add_action('manage_services_posts_custom_column', 'ch_render_homepage_column', 10, 2);

@@ -1009,7 +1009,7 @@ strong {
     margin-bottom: 20px;
   }
   .site-header .main-navigation .social-media a {
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     border-radius: 50%;
     display: inline-block;
     height: 36px;
@@ -1561,6 +1561,29 @@ footer .calendly-sticky-btn a i {
   border-left: 5px solid var(--secondary-color);
 }
 
+.home-services {
+  padding: 60px 0;
+  background-color: var(--primary-color);
+}
+@media (max-width: 767px) {
+  .home-services {
+    padding: 15px;
+  }
+}
+.home-services .service-card {
+  background: transparent;
+}
+.home-services .service-card .card-inner {
+  background: #fff;
+}
+.home-services .service-card .card-inner p.service-excerpt {
+  color: var(--primary-color);
+}
+.home-services .home-services-link {
+  text-align: center;
+  margin: 20px auto 0;
+}
+
 .testimonial-text h3 {
   color: var(--secondary-color);
   font-weight: 100;
@@ -1597,7 +1620,7 @@ footer .calendly-sticky-btn a i {
 }
 .blog-preview-section .blog-card .card {
   background: #2a2a2a;
-  border: 1px solid #01478f;
+  border: 1px solid var(--secondary-color);
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2255,6 +2278,12 @@ footer .calendly-sticky-btn a i {
 .single-landing_pages .testimonial {
   padding: 15px;
 }
+.page-template-page-service-landing-page .testimonial h3,
+.single-landing_pages .testimonial h3 {
+  color: var(--secondary-color);
+  font-weight: 100;
+  margin-bottom: 10px;
+}
 .page-template-page-service-landing-page .testimonial .testimonial-meta,
 .single-landing_pages .testimonial .testimonial-meta {
   display: -webkit-box;
@@ -2280,7 +2309,7 @@ footer .calendly-sticky-btn a i {
 }
 .page-template-page-service-landing-page .testimonial .testimonial-meta .testimonial-info .testimonial-name,
 .single-landing_pages .testimonial .testimonial-meta .testimonial-info .testimonial-name {
-  font-weight: 900;
+  font-weight: 100;
   font-size: 1.2rem;
 }
 .page-template-page-service-landing-page .testimonial .testimonial-meta .testimonial-info .testimonial-stars,
@@ -2325,6 +2354,7 @@ footer .calendly-sticky-btn a i {
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 15px;
+  min-height: 100%;
 }
 .service-card .card-inner h2.service-title {
   font-size: 24px;
@@ -2340,6 +2370,7 @@ footer .calendly-sticky-btn a i {
 }
 .service-card .btn {
   margin: 15px auto;
+  margin-top: auto;
   max-width: 200px;
   background-color: var(--primary-color);
 }

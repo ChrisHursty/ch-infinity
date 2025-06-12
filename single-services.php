@@ -30,6 +30,7 @@ $featured_image_url = $featured_image_url ?: $default_image_url;
     <div class="row">
         <div class="col-12 align-center content">
             <div class="content-area">
+                <a href="/services">&laquo; Back to Services</a>
                 <?php the_content(); ?>
             </div>
         </div>
