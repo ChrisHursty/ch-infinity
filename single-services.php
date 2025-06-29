@@ -44,7 +44,7 @@ $featured_image_url = $featured_image_url ?: $default_image_url;
             <div class="col-8 align-center text-center">
                 <h2>Ready to Get Started?</h2>
                 <p>Fill out the form below and I’ll be in touch with a quote.</p>
-                <?php echo do_shortcode('[ninja_form id=1]'); ?>
+                <?php echo do_shortcode('[ninja_form id=2]'); ?>
             </div>
         </div>
     </div>

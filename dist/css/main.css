@@ -308,6 +308,10 @@ figure {
   text-transform: uppercase;
 }
 
+.list-radio-wrap .nf-field-element li label {
+  text-align: left;
+}
+
 .container {
   max-width: 1180px;
   margin-right: auto;
