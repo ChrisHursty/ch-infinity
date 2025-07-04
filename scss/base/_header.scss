@@ -9,7 +9,10 @@
 
 .header-spacer {
     margin-top: 80px;
-
+    
+    @media (max-width: 1120px) {
+        margin-top: 70px;
+    }
 }
   
 .site-header {

@@ -25,6 +25,10 @@ img.alignright {
     text-align: center;
 }
 
+.text-left {
+    text-align: left !important;
+}
+
 .center-title {
     display: flex;
     justify-content: center;
@@ -42,4 +46,12 @@ img.alignright {
 
 .mb30 {
     margin-bottom: 30px;
+}
+
+.p60 {
+    padding: 60px 0;
+
+    @media (max-width: 1024px) {
+        padding: 15px;
+    }
 }

@@ -131,6 +131,11 @@ figure {
             color: $primary;
         }
     }
+
+    @media (max-width: 1024px) {
+        font-size: 12px;
+        font-weight: 500;
+    }
 }
 
 .white-btn {
