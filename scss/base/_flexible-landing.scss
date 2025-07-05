@@ -24,6 +24,10 @@
         text-align: center;
         color: var(--text-color, #ffffff);
 
+        @media (max-width: 767px) {
+            min-height: 50vh;
+        }
+
         &.bg-cover {
             background-size: cover;
             background-repeat: no-repeat;
@@ -180,6 +184,11 @@
                 font-size: 1.125rem;
                 line-height: 1.6;
                 max-width: 40rem;
+
+                @media (max-width: 767px) {
+                    text-align: left;
+                    max-width: 100%;
+                }
             }
 
             .btn {
@@ -213,6 +222,21 @@
                 align-self: flex-end;
             }
         }
+
+        @media (max-width: 767px) {
+            .feature-split__media {
+                order: 1;
+            }
+            
+            .feature-split__content {
+                text-align: left;
+                order: 2;
+
+                .btn {
+                    align-self: center;
+                }
+            }
+        }
     }
 
     .feature-split__content {
@@ -223,7 +247,7 @@
         }
     }
 
-    @media (min-width: 64em) {
+    @media (min-width: 1180px) {
         .hero-billboard {
             padding: 6rem 2rem;
 
@@ -233,7 +257,7 @@
         }
     }
 
-    @media (max-width: 48em) {
+    @media (max-width: 767px) {
         .feature-split {
             &__media {
                 order: 1;
@@ -243,6 +267,7 @@
                 order: 2;
                 text-align: center;
                 padding: 15px 0;
+                width: 100%;
 
                 .btn {
                     align-self: center;

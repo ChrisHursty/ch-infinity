@@ -2462,6 +2462,11 @@ footer .calendly-sticky-btn a i {
   text-align: center;
   color: var(--text-color, #ffffff);
 }
+@media (max-width: 767px) {
+  .page-template-page-flexible-page .hero-billboard {
+    min-height: 50vh;
+  }
+}
 .page-template-page-flexible-page .hero-billboard.bg-cover {
   background-size: cover;
   background-repeat: no-repeat;
@@ -2616,6 +2621,12 @@ footer .calendly-sticky-btn a i {
   line-height: 1.6;
   max-width: 40rem;
 }
+@media (max-width: 767px) {
+  .page-template-page-flexible-page .feature-split__content p {
+    text-align: left;
+    max-width: 100%;
+  }
+}
 .page-template-page-flexible-page .feature-split__content .btn {
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -2650,13 +2661,30 @@ footer .calendly-sticky-btn a i {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
+@media (max-width: 767px) {
+  .page-template-page-flexible-page .feature-split--image-right .feature-split__media {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .page-template-page-flexible-page .feature-split--image-right .feature-split__content {
+    text-align: left;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .page-template-page-flexible-page .feature-split--image-right .feature-split__content .btn {
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
 .page-template-page-flexible-page .feature-split__content {
   padding: 3rem 2rem;
 }
 .page-template-page-flexible-page .feature-split__content > *:last-child {
   margin-bottom: 0;
 }
-@media (min-width: 64em) {
+@media (min-width: 1180px) {
   .page-template-page-flexible-page .hero-billboard {
     padding: 6rem 2rem;
   }
@@ -2664,7 +2692,7 @@ footer .calendly-sticky-btn a i {
     max-width: 72rem;
   }
 }
-@media (max-width: 48em) {
+@media (max-width: 767px) {
   .page-template-page-flexible-page .feature-split__media {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
@@ -2676,6 +2704,7 @@ footer .calendly-sticky-btn a i {
             order: 2;
     text-align: center;
     padding: 15px 0;
+    width: 100%;
   }
   .page-template-page-flexible-page .feature-split__content .btn {
     -ms-flex-item-align: center;
