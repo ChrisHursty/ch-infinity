@@ -247,12 +247,91 @@
         }
     }
 
+    /* Feature Cards Grid
+   ------------------ */
+   .feature-cards-band {
+        @extend .feature-split;
+    }
+
+    .feature-cards {
+        display: grid;
+        gap: 2.5rem;
+
+        &.columns-3 {
+            grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        }
+
+        &.columns-4 {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        &.text-center {
+            text-align: center;
+        }
+    }
+
+    .feature-card {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        background: rgba(255, 255, 255, .02);
+        border-radius: .75rem;
+        transition: transform .25s ease, box-shadow .25s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+        }
+
+        &__icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            margin: 0 0 .75rem;
+            font-size: 1.375rem;
+        }
+
+        p {
+            margin: 0 0 1.25rem;
+        }
+
+        .btn-sm {
+            padding: .5rem 1.25rem;
+            font-size: .875rem;
+        }
+    }
+
     @media (min-width: 1180px) {
         .hero-billboard {
             padding: 6rem 2rem;
 
             &__inner {
                 max-width: 72rem;
+            }
+        }
+    }
+
+    @media (max-width: 1025px) {
+        .feature-cards {
+            gap: 2rem;
+
+            &.columns-3 {
+                grid-template-columns: repeat(2, 1fr);
+
+                /* 2-up */
+                > :nth-child(3) {
+                    grid-column: 1 / -1;
+                }
+
+                /* 3rd spans full */
+            }
+
+            &.columns-4 {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 × 2 grid */
             }
         }
     }
@@ -273,6 +352,18 @@
                     align-self: center;
                 }
             }
+        }
+
+        .feature-cards {
+            grid-template-columns: 1fr !important;
+            /* 1 column */
+            gap: 1.75rem;
+
+            &.columns-3> :nth-child(3) {
+                grid-column: auto;
+            }
+
+            /* reset span */
         }
     }
 }

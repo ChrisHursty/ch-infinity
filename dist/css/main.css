@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 /* Reset Margin, Padding, and Box Sizing */
 *,
@@ -2429,6 +2430,10 @@ footer .calendly-sticky-btn a i {
   background-color: transparent;
 }
 
+.page-template-page-flexible-page {
+  /* Feature Cards Grid
+  ------------------ */
+}
 .page-template-page-flexible-page .row.valign-top {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -2547,7 +2552,7 @@ footer .calendly-sticky-btn a i {
           transform: translateY(-2px);
   color: var(--primary-color);
 }
-.page-template-page-flexible-page .feature-split {
+.page-template-page-flexible-page .feature-split, .page-template-page-flexible-page .feature-cards-band {
   position: relative;
   /* makes overlay / video absolute to this */
   color: var(--text-color, #ffffff);
@@ -2555,7 +2560,7 @@ footer .calendly-sticky-btn a i {
   /* tint goes above video / image, below content */
   /* main grid lives inside .container so give content a higher z-index */
 }
-.page-template-page-flexible-page .feature-split.bg-cover {
+.page-template-page-flexible-page .feature-split.bg-cover, .page-template-page-flexible-page .bg-cover.feature-cards-band {
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -2631,17 +2636,17 @@ footer .calendly-sticky-btn a i {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
-.page-template-page-flexible-page .feature-split.valign-top {
+.page-template-page-flexible-page .feature-split.valign-top, .page-template-page-flexible-page .valign-top.feature-cards-band {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.page-template-page-flexible-page .feature-split.valign-center {
+.page-template-page-flexible-page .feature-split.valign-center, .page-template-page-flexible-page .valign-center.feature-cards-band {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.page-template-page-flexible-page .feature-split.valign-bottom {
+.page-template-page-flexible-page .feature-split.valign-bottom, .page-template-page-flexible-page .valign-bottom.feature-cards-band {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -2684,12 +2689,75 @@ footer .calendly-sticky-btn a i {
 .page-template-page-flexible-page .feature-split__content > *:last-child {
   margin-bottom: 0;
 }
+.page-template-page-flexible-page .feature-cards {
+  display: grid;
+  gap: 2.5rem;
+}
+.page-template-page-flexible-page .feature-cards.columns-3 {
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+}
+.page-template-page-flexible-page .feature-cards.columns-4 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.page-template-page-flexible-page .feature-cards.text-center {
+  text-align: center;
+}
+.page-template-page-flexible-page .feature-card {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0.75rem;
+  -webkit-transition: -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
+  transition: -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, -webkit-transform 0.25s ease, -webkit-box-shadow 0.25s ease;
+}
+.page-template-page-flexible-page .feature-card:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.page-template-page-flexible-page .feature-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+.page-template-page-flexible-page .feature-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.375rem;
+}
+.page-template-page-flexible-page .feature-card p {
+  margin: 0 0 1.25rem;
+}
+.page-template-page-flexible-page .feature-card .btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
 @media (min-width: 1180px) {
   .page-template-page-flexible-page .hero-billboard {
     padding: 6rem 2rem;
   }
   .page-template-page-flexible-page .hero-billboard__inner {
     max-width: 72rem;
+  }
+}
+@media (max-width: 1025px) {
+  .page-template-page-flexible-page .feature-cards {
+    gap: 2rem;
+  }
+  .page-template-page-flexible-page .feature-cards.columns-3 {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2-up */
+    /* 3rd spans full */
+  }
+  .page-template-page-flexible-page .feature-cards.columns-3 > :nth-child(3) {
+    grid-column: 1/-1;
+  }
+  .page-template-page-flexible-page .feature-cards.columns-4 {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 × 2 grid */
   }
 }
 @media (max-width: 767px) {
@@ -2709,5 +2777,14 @@ footer .calendly-sticky-btn a i {
   .page-template-page-flexible-page .feature-split__content .btn {
     -ms-flex-item-align: center;
         align-self: center;
+  }
+  .page-template-page-flexible-page .feature-cards {
+    grid-template-columns: 1fr !important;
+    /* 1 column */
+    gap: 1.75rem;
+    /* reset span */
+  }
+  .page-template-page-flexible-page .feature-cards.columns-3 > :nth-child(3) {
+    grid-column: auto;
   }
 }
